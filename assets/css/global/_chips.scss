@@ -1,7 +1,7 @@
 .chips {
     align-items: center;
-    background: $blue;
-    border: 1px solid $blue;
+    background: $primary;
+    border: 1px solid $primary;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -15,7 +15,8 @@
     }
     
     &__text {
-        color: $white;
+        color: #000;
+        font-family: $roboto;
         font-size: 16px;
         font-weight: $regular;
         transition: color .5s ease-in-out;
@@ -53,7 +54,7 @@
             background: transparent;
             
             .chips__text {
-                color: $blue;
+                color: $primary;
             }
         }
     }
@@ -62,27 +63,29 @@
         background: transparent;
         
         .chips__text {
-            color: $blue;
+            color: $primary;
         }
         
         &.chips--clicable:hover {
-            background: $blue;
+            background: $primary;
             
             .chips__text {
-                color: $white;
+                color: #000;
             }
         }
     }
     
-    
-    
-    &--arquivos {
-        background: $blue;
-        border-color: $blue;
+    &--tertiary {
+        background: $secondary;
+        border-color: $secondary;
+        
+        .chips__text {
+            color: #fff;
+        }
         
         &.chips--clicable:hover {
             .chips__text {
-                color: $blue;
+                color: $secondary;
             }
         }
         
@@ -90,41 +93,14 @@
             background: transparent;
             
             .chips__text {
-                color: $blue;
+                color: $secondary;
             }
             
             &.chips--clicable:hover {
-                background: $blue;
+                background: $secondary;
                 
                 .chips__text {
-                    color: $white;
-                }
-            }
-        }
-    }
-    
-    &--categorias {
-        background: $green;
-        border-color: $green;
-        
-        &.chips--clicable:hover {
-            .chips__text {
-                color: $green;
-            }
-        }
-        
-        &.chips--secondary {
-            background: transparent;
-            
-            .chips__text {
-                color: $green;
-            }
-            
-            &.chips--clicable:hover {
-                background: $green;
-                
-                .chips__text {
-                    color: $white;
+                    color: #fff;
                 }
             }
         }
@@ -133,6 +109,10 @@
     &--datas {
         background: $gray-dark;
         border-color: $gray-dark;
+        
+        .chips__text {
+            color: #fff;
+        }
         
         &.chips--clicable:hover {
             .chips__text {
@@ -151,7 +131,7 @@
                 background: $gray-dark;
                 
                 .chips__text {
-                    color: $white;
+                    color: #fff;
                 }
             }
         }
@@ -160,11 +140,6 @@
     &--andamento {
         background: $status-warning;
         border-color: $status-warning;
-        
-        .chips__text {
-            color: $black;
-            font-weight: 500;
-        }
         
         &.chips--clicable:hover {
             .chips__text {
@@ -183,7 +158,7 @@
                 background: $status-warning;
                 
                 .chips__text {
-                    color: $black;
+                    color: #000;
                     font-weight: 500;
                 }
             }
@@ -193,6 +168,10 @@
     &--concluido {
         background: $status-success;
         border-color: $status-success;
+        
+        .chips__text {
+            color: #fff;
+        }
         
         &.chips--clicable:hover {
             .chips__text {
@@ -211,7 +190,7 @@
                 background: $status-success;
                 
                 .chips__text {
-                    color: $white;
+                    color: #fff;
                 }
             }
         }
@@ -220,6 +199,10 @@
     &--cancelado {
         background: $status-failed;
         border-color: $status-failed;
+        
+        .chips__text {
+            color: #fff;
+        }
         
         &.chips--clicable:hover {
             .chips__text {
@@ -238,7 +221,7 @@
                 background: $status-failed;
                 
                 .chips__text {
-                    color: $white;
+                    color: #fff;
                 }
             }
         }

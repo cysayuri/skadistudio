@@ -3,26 +3,21 @@ button, .btn, input[type="submit"] {
     align-items: center;
     background: $primary;
     border: 1px solid $primary;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
-    color: $white;
+    color: #000;
     display: flex;
-    font-family: $font;
-    font-size: 16px;
+    font-family: $roboto;
+    font-size: 20px;
     font-weight: $regular;
-    height: 60px;
+    height: 44px;
     letter-spacing: 0.05em;
     margin: 0;
-    padding: 16px 30px;
+    padding: 8px 30px;
     text-decoration: none;
     text-transform: uppercase;
     transition: all .5s ease-in-out;
     width: fit-content;
-    
-    @include MQ($S) {
-        height: 44px;
-        padding: 8px 24px;
-    }
     
     &:hover {
         background: transparent;
@@ -37,14 +32,14 @@ button, .btn, input[type="submit"] {
         
         &:hover {
             background: $primary;
-            color: $white;
+            color: #fff;
         }
     }
     
     &--link {
         background: transparent;
         border: none;
-        color: $black;
+        color: #000;
         height: auto;
         padding: 5px 10px;
         text-decoration: underline;
@@ -58,32 +53,5 @@ button, .btn, input[type="submit"] {
     
     &--icon i {
         margin-left: 5px;
-    }
-
-    &--rounded {
-        border-radius: 50px;
-    }
-
-    &--voltar {
-        align-items: center;
-        color: $white;
-        display: flex;
-        margin: 0 0 30px;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: color .5s ease-in-out;
-
-        &:hover {
-            color: $secondary;
-        }
-
-        i {
-            font-size: 26px;
-            margin-right: 15px;
-        }
-        
-        @include MQ($S) {
-            display: none;
-        }
     }
 }

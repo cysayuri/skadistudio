@@ -2,13 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 @font-face {
-    font-family: 'OpenSans';
-    src: url(../fonts/OpenSans-VariableFont_wdth_wght.ttf);
-    font-weight: 100 750;
+    font-family: 'Unbounded';
+    src: url(../fonts/Unbounded/Unbounded-VariableFont_wght.ttf);
+    font-weight: 100 900;
 }
 
+@font-face {
+    font-family: 'Cinzel';
+    src: url(../fonts/Cinzel/Cinzel-VariableFont_wght.ttf);
+    font-weight: 100 900;
+}
 
-$font: 'OpenSans', 'Roboto', 'Calibri', 'sans-serif';
+@font-face {
+    font-family: 'Julius';
+    src: url(../fonts/Julius/JuliusSansOne-Regular.ttf);
+}
+
+$font: 'Unbounded', 'Roboto', 'Calibri', 'sans-serif';
+$font-secondary: 'Julius', 'Roboto', 'Calibri', 'sans-serif';
+$font-tertiary: 'Cinzel', 'Roboto', 'Calibri', 'sans-serif';
+$roboto: 'Roboto', 'Calibri', 'sans-serif';
  
 $thin: 100;
 $light: 300;
@@ -18,21 +31,12 @@ $bold: 750;
 
 
 /* ___ Colors ___ */
-$primary: #234E70;
-$secondary: #FAF7C0;
-$tertiary: #C5C3A4;
+$primary: #38F2F2;
+$secondary: #263640;
 
-$black: #231F20;
-$gray-dark: #64798D;
-$gray-light: #80969F;
-$white: #FFF;
-
-$green: #2CBB96;
-$green-light: #D3E179;
-$yellow: #F2EF75;
-$blue: #45B0E4;
-$purple: #B980B3;
-$lilac: #BBA5AE;
+$gray-dark: #516373;
+$gray: #7C92A6;
+$gray-light: #DFE7F2;
 
 $status-success: #21B35B;
 $status-warning: #FFB21D;
@@ -48,7 +52,7 @@ $status-info: #297FFF;
 }
 
 $XS: 500px;
-$S: 770px;
-$M: 995px;
+$S: 758px;
+$M: 960px;
 $L: 1170px;
 $XL: 1380px;

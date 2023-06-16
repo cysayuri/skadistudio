@@ -1,77 +1,36 @@
 html:not([data-scroll='0']), .page-template-contato, .error404, .single {
     menu {
-        background: $white;
+        background: #fff;
         
         ul li a {
+            color: #000;
+            @include MQ($L) {
+                color: #fff;
+            }
+            
             &:after {
                 background: $primary;
             }
         }
     }
     
-    menu ul li a,
-    .menu__social i {
-        color: $black;
-        
-        @include MQ($L) {
-            color: $white;
-        }
-    }
-    
     .menu {
-        &__search-btn i {
-            color: $black;
-        }
-        
-        &__item--acess a {
-            background: $black;
-            border-color: $black;
-            color: $white;
-            
-            &:hover {
-                background: $white;
-                color: $black;
-            }
-        }
-        
-        &__search {
-            &-input, &-input::placeholder {
-                border-color: #898989 !important;
-                color: #898989;
-            }
-        }
-        
         &__burguer {
-            border-color: $black;
+            border-color: #000;
             
             &:before, &:after {
-                background: $black;
+                background: #000;
             }
             
             &.is-active {
                 @include MQ($L) {
-                    border-color: $white;
+                    border-color: #fff;
                 }
                 
                 &:before, &:after {
                     @include MQ($L) {
-                        background: $white;
+                        background: #fff;
                     }
-                }
-            }
-        }
-        
-        &.is-active {
-            .menu__search {
-                &-btn i {
-                    @include MQ($L) {
-                        color: $white;
-                    }
-                }
-                
-                &-input, &-input::placeholder {
-                    border-color: $white !important;
-                    color: $white;
                 }
             }
         }
@@ -128,7 +87,7 @@ menu {
         
         li {
             list-style: none;
-            margin: 0 0 0 10px;
+            margin: 0 0 0 50px;
             position: relative;
             
             @include MQ($M) {
@@ -142,9 +101,10 @@ menu {
             
             a {
                 display: inline-block;
-                font-size: 20px;
+                font-family: $font-secondary;
+                font-size: 18px;
                 font-weight: 400;
-                padding: 20px 15px;
+                padding: 20px;
                 position: relative;
                 text-decoration: none;
                 transition: color .5s ease-in-out;
@@ -200,116 +160,6 @@ menu {
                     }
                 }
             }
-            
-            ul {
-                background: $white;
-                box-shadow: 0 3px 7px #1a1a1a;
-                flex-direction: column;
-                height: 0;
-                max-height: 0;
-                opacity: 0;
-                padding: 0 10px;
-                pointer-events: none;
-                position: absolute;
-                transition: max-height .5s ease-in-out, opacity .5s ease-in-out;
-                
-                @include MQ($L) {
-                    background: transparent;
-                    left: 0;
-                    max-height: none;
-                    opacity: 1;
-                    pointer-events: auto;
-                    position: relative;
-                    top: 60px;
-                    transform: translate(-10px, 0px);
-                }
-                
-                @include MQ($M) {
-                    top: 70px;
-                }
-                
-                @include MQ($S) {
-                    top: 0;
-                }
-                
-                li, a {
-                    opacity: 0;
-                    transition: opacity .7s ease-in-out;
-                    
-                    @include MQ($L) {
-                        opacity: 1;
-                    }
-                }
-                
-                li {
-                    margin: 20px 0;
-                    
-                    @include MQ($M) {
-                        margin: 10px 0;
-                    }
-                    
-                    @include MQ($XS) {
-                        margin: 7px 0;
-                    }
-                    
-                    a {
-                        color: $black;
-                        font-size: 18px;
-                        font-weight: 400;
-                        line-height: 1.3em;
-                        margin: 0;
-                        max-width: 180px;
-                        min-width: 150px;
-                        padding: 0 10px;
-                        transition: color .5s ease-in-out;
-                        width: max-content;
-                        
-                        @include MQ($L) {
-                            font-size: 15px;
-                            padding: 3px 10px 3px 15px;
-                        }
-                        
-                        @include MQ($M) {
-                            font-size: 18px;
-                            max-width: 100%;
-                            padding: 10px 10px 10px 20px;
-                        }
-                        
-                        @include MQ($S) {
-                            padding: 10px 20px;
-                        }
-                        
-                        @include MQ($XS) {
-                            font-size: 16px;
-                        }
-                        
-                        &:after {
-                            background: $primary;
-                            bottom: -5px;
-                            left:10px;
-                            opacity: 0;
-                            transition: width 1s ease-in-out, opacity .3s ease-in-out;
-                        }
-                        
-                        &:hover {
-                            &:after {
-                                width: 85%;
-                                opacity: 1;
-                                transition: width .3s ease-in-out, opacity .5s ease-in-out;
-                                
-                                @include MQ($L) {
-                                    bottom: 5px;
-                                    width: 100%;
-                                }
-                                
-                                @include MQ($S) {
-                                    width: 0%;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
     
@@ -352,7 +202,7 @@ menu {
         
         img {
             transition: opacity .5s ease-in-out;
-            width: 125px;
+            width: 210px;
             
             @include MQ($L) {
                 margin-top: 7px;
@@ -399,283 +249,6 @@ menu {
         &.disabled {
             opacity: 0;
             pointer-events: none;
-        }
-    }
-    
-    &__search {
-        margin: 3px 0 0 30px;
-        position: relative;
-        z-index: 8;
-        
-        @include MQ($M) {
-            margin: 5px 0 0 30px;
-        }
-        
-        &.active {
-            .menu__search-input {
-                opacity: 1;
-                pointer-events: auto;
-                z-index: 0;
-            }
-        }
-        
-        &-input {
-            background: transparent;
-            border: 1px solid;
-            border-radius: 5px;
-            height: 45px;
-            font-size: 16px;
-            margin: 3px 30px 0 0;
-            opacity: 0;
-            outline: none;
-            padding-right: 40px;
-            pointer-events: none;
-            position: absolute;
-            right: -35px;
-            transition: opacity .5s ease-in-out;
-            width: 300px;
-            z-index: -1;
-            
-            @include MQ($S) {
-                font-size: 14px;
-                height: 37px;
-                margin: 8px 40px 0 0;
-                padding: 0 40px 0 10px;
-                width: 260px;
-            }
-            
-            @include MQ($XS) {
-                width: 210px;
-            }
-            
-            &::placeholder {
-                font-size: 16px;
-                font-weight: 400;
-                
-                @include MQ($M) {
-                    font-size: 14px;
-                }
-            }
-        }
-        
-        &-btn {
-            display: block;
-            height: 15px;
-            margin: 10px 0;
-            padding: 15px 16px;
-            position: relative;
-            width: 15px;
-            
-            @include MQ($M) {
-                margin: 11px 10px 10px;
-            }
-            
-            &::after {
-                display: none;
-            }
-            
-            i {
-                font-size: 15px;
-                margin: -7px;
-                position: absolute;
-                transition: opacity .5s ease-in-out;
-            }
-        }
-    }
-    
-    &__link {
-        &--dropdown {
-            margin-bottom: 0;
-            
-            &::after {
-                display: none;
-            }
-            
-            i {
-                font-size: 12px;
-                margin-left: 3px;
-            }
-        } 
-        
-        &--third {
-            @include MQ($M) {
-                position: initial;
-            }
-            
-            i {
-                font-size: 18px;
-                pointer-events: none;
-                position: absolute;
-                right: -40px;
-                z-index: 5;
-                
-                @include MQ($M) {
-                    right: 20px;
-                }
-                
-                @include MQ($XS) {
-                    top: 7px;
-                    right: auto;
-                    left: 85vw;
-                }
-            }
-        }
-    }
-    
-    &__item {
-        &--dropdown {
-            .menu__dropdown {
-                .menu__item--dropdown{
-                    .menu__dropdown {
-                        opacity: 0;
-                    }
-                    
-                    &:hover, &:active {
-                        .menu__dropdown {
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
-            
-            &:hover, &:active {
-                .menu__dropdown {
-                    height: auto;
-                    max-height: 800px;
-                    opacity: 1;
-                    padding: 8px 15px;
-                    pointer-events: all;
-                    
-                    @include MQ($M) {
-                        padding: 0;
-                    }
-                    
-                    div, li, a {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-        
-        &--sub {
-            position: initial;
-        }
-        
-        &--third {
-            margin: -20px -20px 0;
-            padding: 20px 20px;
-            transition: all .5s ease-in-out;
-            
-            @include MQ($M) {
-                margin: 10px -20px 0;
-                padding: 0 20px;
-                position: relative;
-            }
-            
-            @include MQ($XS) {
-                margin: 0;
-                padding: 0; 
-            }
-            
-            ul {
-                background: $black;
-                height: auto;
-                opacity: 0;
-                pointer-events: none;
-                top: 0;
-                transition: opacity .5s ease-in;
-                
-                @include MQ($L) {
-                    background: transparent;
-                    box-shadow: none;
-                    height: 0;
-                    margin: -10px 0 0 15px;
-                }
-                
-                @include MQ($M) {
-                    width: 100%;
-                }
-                
-                @include MQ($S) {
-                    padding: 0 10px;
-                }
-                
-                li {
-                    @include MQ($M) {
-                        margin: 20px 0 0 20px;
-                    }
-                    
-                    @include MQ($S) {
-                        margin: 10px 0 0 10px;
-                    }
-                }
-            }
-            
-            a {
-                @include MQ($M) {
-                    max-width: 90%;
-                }
-                
-                @include MQ($S) {
-                    max-width: 80%;
-                }
-                
-                &:after {
-                    display: block;
-                    left: auto;
-                    transform: none;
-                }
-            }
-            
-            &:hover, &:active {
-                .menu__dropdown {
-                    opacity: 1;
-                    padding: 8px 15px;
-                    pointer-events: all;
-                    
-                    @include MQ($M) {
-                        height: auto;
-                        padding: 0;
-                    }
-                    
-                    @include MQ($S) {
-                        margin: 0 0 20px 15px;
-                    }
-                    
-                    div, li, a {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-        
-        &--acess {
-            &:last-child {
-                margin-left: 0;
-                
-                a {
-                    border-radius: 0 2px 2px 0;
-                    padding: 13px 15px 13px 12px;
-                }
-            }
-            
-            a {
-                background: $white;
-                border: 1px solid $white;
-                border-radius: 2px 0 0 2px;
-                margin: 7px 0;
-                padding: 13px 12px 13px 15px;
-                transition: all .5s ease-in-out;
-                
-                &:after {
-                    display: none;
-                }
-                
-                &:hover {
-                    background: transparent;
-                    color: $white;
-                }
-            }
         }
     }
     
@@ -837,192 +410,24 @@ menu {
             width: 100%;
         }
     }
-    
-    &__dropdown {
-        min-width: 150px;
-        
-        &-open {
-            cursor: pointer;
-            display: flex;
-            justify-content: flex-end;
-            position: initial;
-            margin: -37px 0 15px 0;
-            width: 95%;
-            
-            i {
-                color: $white;
-                font-size: 18px;
-                font-weight: 400;
-                transition: opacity .5s ease-in-out;
-                
-                &:hover {
-                    opacity: .7;
-                }
-                
-                @include MQ($M) {
-                    font-size: 18px;
-                }
-                
-                @include MQ($S) {
-                    font-size: 24px;
-                }
-            }
-        }
-        
-        &-content {
-            @include MQ($L) {
-                background: $primary;
-                box-shadow: none;
-                display: block;
-                height: 100%;
-                left: -200%;
-                margin-left: 10px;
-                position: absolute;
-                top: 0;
-                transition: left .5s ease-in-out;
-                width: 100%;
-                z-index: 2;
-            }
-            
-            @include MQ($S) {
-                height: 90vh;
-                padding: 20px 0 0;
-            }
-            
-            &.is-active {
-                left: 0;
-                
-                @include MQ($S) {
-                    left: -10px;
-                }
-            }
-            
-            li a {
-                color: #fff;
-            }
-        }
-        
-        &-close {
-            color: $white;
-            cursor: pointer;
-            font-size: 25px;
-            left: -5px;
-            padding: 10px;
-            position: relative;
-            top: 10px;
-            transition: opacity .5s ease-in-out;
-            
-            &:hover {
-                opacity: .7;
-            }
-            
-            @include MQ($M) {
-                left: -5px;
-                top: 0;
-            }
-            
-            @include MQ($M) {
-                left: 0;
-            }
-            
-            @include MQ($S) {
-                font-size: 26px;
-            }
-        }
-        
-        &--third {
-            background: $black;
-            left: auto !important;
-            padding: 0 30px 0 20px !important;
-            right: -215px;
-            top: -17px;
-            
-            li a {
-                color: #fff;
-                
-                &:hover {
-                    &:after {
-                        background: #fff;
-                    }
-                }
-            }
-        }
-    }
-    
-    &__top {
-        align-items: center;
-        
-        ul li {
-            a {
-                font-size: 16px;
-            }
-            
-            ul {
-                top: 53px;
-                z-index: 2;
-            }
-        }
-    }
-    
-    &__social {
-        align-items: center;
-        margin: 0 20px 0 30px;
-        
-        i {
-            font-size: 20px;
-            margin: 0 7px;
-            transition: color .5s ease-in-out;
-            
-            &:hover {
-                color: $primary;
-            }
-        }
-    }
 }
 
 
-menu ul li a,
-.menu__search-btn i,
-.menu__social i {
-    color: $white;
+menu ul li a {
+    color: #fff;
     transition: all .5s ease-in-out;
-}
 
-menu ul li a  {
     &:after {
-        background: $secondary;
+        background: $primary;
     }
 }
 
 .menu {
-    &__item--acess a {
-        background: $white;
-        border-color: $white;
-        color: $black;
-        transition: all .5s ease-in-out;
-        
-        &:hover {
-            background: $black;
-            color: $white;
-        }
-    }
-    
-    &__search {
-        &-input, &-input::placeholder {
-            color: $white;
-            transition: all .5s ease-in-out;
-        }
-        
-        &-input {
-            border-color: $white !important;
-        }
-    }
-    
     &__burguer {
-        border-color: $white;
+        border-color: #fff;
         
         &:before, &:after {
-            background: $white;
+            background: #fff;
         }
     }
 }
