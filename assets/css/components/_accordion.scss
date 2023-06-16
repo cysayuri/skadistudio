@@ -1,0 +1,420 @@
+.accordion {
+    margin: 0 0 40px;
+    position: relative;
+    transition: margin .5s ease-in-out;
+    
+    @include MQ($M) {
+        margin-bottom: 20px;
+    }
+    
+    &:before {
+        background: $black;
+        content: '';
+        height: 1px;
+        position: absolute;
+        right: 0;
+        top: -10px;
+        transition: all .5s ease-out;
+        width: 100%;
+    }
+    
+    &__header {
+        align-items: center;
+        cursor: pointer;
+        
+        &-title {
+            font-size: 20px;
+            font-weight: $medium;
+            margin: 0;
+            max-width: 90%;
+            transition: color .5s ease-in-out;
+        }
+        
+        &-btn {
+            position: relative;
+            
+            &::before, &::after {
+                background: $black;
+                content: '';
+                height: 1px;
+                position: absolute;
+                right: 0;
+                transition: transform .5s ease-in-out;
+                width: 16px;
+            }
+            
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+        
+        &:hover {
+            .accordion__header {
+                &-title {
+                    color: $secondary;
+                }
+                
+                &-btn::before, &-btn::after {
+                    background: $secondary;
+                }
+            }
+        }
+    }
+    
+    &__body {
+        margin: 25px 0 0;
+        max-height: 0;
+        min-height: 0;
+        opacity: 0;
+        padding: 0 40px;
+        pointer-events: none;
+        transition: all .5s ease-in-out;
+        z-index: -1;
+        
+        p {
+            font-size: 20px;
+            font-weight: $regular;
+            margin: 20px 0;
+            
+            @include MQ($S) {
+                font-size: 16px;
+            }
+        }
+        
+        * {
+            opacity: 0;
+            transition: all .5s ease-in;
+        }
+    }
+    
+    &.active {
+        margin: 0 0 60px;
+        
+        .accordion {
+            &__header-btn {
+                &::before {
+                    transform: rotate(180deg);
+                }
+                
+                &::after {
+                    transform: rotate(-180deg);
+                }
+            }
+            
+            &__body {
+                max-height: 3000px;
+                min-height: 10px;
+                opacity: 1;
+                padding: 30px 40px 40px;
+                pointer-events: auto;
+                z-index: 1;
+                
+                * {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+    &--secondary {
+        border: 1px solid $gray-dark;
+        border-radius: 7px;
+        margin-bottom: 10px;
+        
+        &:before {
+            display: none;
+        }
+        
+        .accordion {
+            &__header {
+                background: transparent;
+                border-radius: 5px;
+                padding: 25px 50px;
+                transition: background .5s ease-in-out;
+            
+                @include MQ($M) {
+                    padding: 20px 30px;
+                }
+
+                @include MQ($S) {
+                    padding: 15px 25px;
+                }
+
+                @include MQ($XS) {
+                    padding: 15px 20px;
+                }
+                
+                &-title {
+                    color: $gray-dark;
+                    font-size: 20px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    
+                    @include MQ($M) {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    
+                    @include MQ($S) {
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                    
+                    @include MQ($XS) {
+                        font-size: 15px;
+                    }
+                }
+                
+                &-btn {
+                    &::before, &::after {
+                        background: $gray-dark;
+                        height: 3px;
+                        border-radius: 3px;
+                        transition: right .5s ease-in-out, background .5s ease-in-out;
+                        width: 25px;
+            
+                        @include MQ($M) {
+                            height: 2px;
+                            width: 20px;
+                        }
+
+                        @include MQ($S) {
+                            width: 15px;
+                        }
+                    }
+                    
+                    &::before {
+                        transform: rotate(45deg);
+                        right: 17px;
+            
+                        @include MQ($M) {
+                            right: 14px;
+                        }
+            
+                        @include MQ($S) {
+                            right: 10px;
+                        }
+                    }
+                    
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+                
+                &:hover {
+                    background: $gray-light;
+                    
+                    .accordion__header {
+                        &-title {
+                            color: $white;
+                        }
+                        
+                        &-btn::before, &-btn::after {
+                            background: $white;
+                        }
+                    }
+                }
+            }
+            
+            &__body {
+                background: transparent;
+                border-radius: 5px;
+                margin: 0;
+            }
+        }
+        
+        &.active {
+            margin: 0 0 40px;
+            
+            @include MQ($M) {
+                margin-bottom: 20px;
+            }
+            
+            .accordion {
+                &__header {
+                    background: $primary;
+                    
+                    &-title {
+                        color: $white;
+                    }
+                    
+                    &-btn {
+                        &::before {
+                            background: $white;
+                            right: 0;
+                            transform: rotate(45deg);
+                        }
+                        
+                        &::after {
+                            background: $white;
+                            right: 17px;
+                            transform: rotate(-45deg);
+            
+                            @include MQ($M) {
+                                right: 14px;
+                            }
+                
+                            @include MQ($S) {
+                                right: 10px;
+                            }
+                        }
+                    }
+                }
+                
+                &__body {
+                    padding: 35px 40px 30px;
+            
+                    @include MQ($M) {
+                        padding: 20px 30px 30px;
+                    }
+                    
+                    @include MQ($S) {
+                        padding: 15px 20px;
+                    }
+                }
+            }
+        }
+    }
+    
+    &--tertiary {
+        border: 1px solid $gray-dark;
+        border-radius: 7px;
+        
+        &:before {
+            display: none;
+        }
+        
+        .accordion {
+            &__header {
+                background: $gray-dark;
+                border-radius: 5px;
+                padding: 30px 50px;
+                transition: background .5s ease-in-out;
+                
+                @include MQ($M) {
+                    padding: 25px 35px;
+                }
+                
+                @include MQ($S) {
+                    padding: 20px 25px;
+                }
+                
+                @include MQ($XS) {
+                    padding: 20px;
+                }
+                
+                &-title {
+                    color: $white;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    
+                    @include MQ($M) {
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    
+                    @include MQ($S) {
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                    
+                    @include MQ($XS) {
+                        font-size: 15px;
+                    }
+                }
+                
+                &-btn {
+                    &::before, &::after {
+                        background: $white;
+                        height: 3px;
+                        border-radius: 3px;
+                        transition: right .5s ease-in-out, background .5s ease-in-out;
+                        width: 25px;
+            
+                        @include MQ($M) {
+                            height: 2px;
+                            width: 20px;
+                        }
+
+                        @include MQ($S) {
+                            width: 15px;
+                        }
+                    }
+                    
+                    &::before {
+                        transform: rotate(45deg);
+                        right: 17px;
+            
+                        @include MQ($M) {
+                            right: 14px;
+                        }
+            
+                        @include MQ($S) {
+                            right: 10px;
+                        }
+                    }
+                    
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+                
+                &:hover {
+                    background: $gray-light;
+                    
+                    .accordion__header {
+                        &-title {
+                            color: $white;
+                        }
+                        
+                        &-btn::before, &-btn::after {
+                            background: $white;
+                        }
+                    }
+                }
+            }
+            
+            &__body {
+                background: transparent;
+                border-radius: 5px;
+                margin: 0;
+            }
+        }
+        
+        &.active {
+            margin: 0 0 40px;
+            
+            .accordion {
+                &__header-btn {
+                    &::before {
+                        right: 0;
+                        transform: rotate(45deg);
+                    }
+                    
+                    &::after {
+                        right: 17px;
+                        transform: rotate(-45deg);
+            
+                        @include MQ($M) {
+                            right: 14px;
+                        }
+            
+                        @include MQ($S) {
+                            right: 10px;
+                        }
+                    }
+                }
+                
+                &__body {
+                    @include MQ($M) {
+                        padding: 30px 30px 35px;
+                    }
+
+                    @include MQ($S) {
+                        padding: 25px 20px 30px;
+                    }
+                }
+            }
+        }
+    }
+}

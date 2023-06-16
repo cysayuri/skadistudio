@@ -1,0 +1,54 @@
+.banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 460px;
+    position: relative;
+    width: 100vw;
+    
+    &::after {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #231F20;
+        content: '';
+        height: 100%;
+        left: 0;
+        mix-blend-mode: multiply;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    
+    @include MQ($S) {
+        height: 200px;
+    }
+    
+    .wrapper {
+        height: 100%;
+        position: relative;
+        width: 100%;
+        
+        @include MQ($L) {
+            width: calc(100% - 80px);
+        }
+        
+        @include MQ($S) {
+            width: calc(100% - 40px);
+        }
+    }
+    
+    &__title {
+        bottom: 50px;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        
+        @include MQ($S) {
+            bottom: 20px;
+        }
+        
+        .h1 {
+            color: white;
+            margin: 0;
+        }
+    }
+}

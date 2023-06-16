@@ -1,0 +1,197 @@
+.erro404, .error404 {
+    height: 100vh;
+    position: relative;
+    
+    &::before {
+        background: $gray-dark;
+        height: 1.3px;
+        content: '';
+        left: 50%;
+        opacity: .5;
+        position: absolute;
+        top: 160px;
+        transform: translate(-50%);
+        max-width: 1340px;
+        width: 100%;
+        
+        @include MQ($L) {
+            top: 120px;
+        }
+        
+        @include MQ($M) {
+            display: none;
+        }
+    }
+    
+    &__content {
+        height: 100%;
+        position: relative;
+        
+        &:before, &:after {
+            background: url(../images/pages/erro404/effect.png) no-repeat;
+            background-size: contain;
+            bottom: -5px;
+            content: '';
+            height: 460px;
+            position: absolute;
+            width: 470px;
+            z-index: -1;
+            
+            @include MQ($M) {
+                bottom: 0;
+                height: 340px;
+                width: 350px;
+            }
+        }
+        
+        &:before {
+            left: 0;
+            transform: scaleX(-1);
+        }
+        
+        &:after {
+            right: 0;
+            
+            @include MQ($XS) {
+                display: none;
+            }
+        }
+    }
+    
+    &__container {
+        height: 100%;
+        flex-direction: column;
+        padding-top: 70px;
+        text-align: center;
+        
+        .h1 {
+            margin: 0;
+            
+            @include MQ(1500px) {
+                margin: 30px 0 0;
+            }
+            
+            @include MQ(1300px) {
+                margin: 0;
+            }
+            
+            @include MQ($M) {
+                font-size: 38px;
+                line-height: 1.2em;
+            }
+        }
+        
+        .h5 {
+            color: #000;
+            font-weight: 400;
+            margin: 30px 0 50px;
+            opacity: .6;
+            
+            @include MQ($M) {
+                margin: 25px auto;
+                max-width: 285px;
+                text-align: center;
+            }
+        }
+        
+        &-btns {
+            margin: 0 auto;
+            width: 770px;
+            
+            @include MQ($M) {
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                width: 100%;
+            }
+            
+            .btn {
+                justify-content: center;
+                width: 365px;
+                
+                @include MQ($M) {
+                    width: 45%;
+                }
+                
+                @include MQ(650px) {
+                    margin-top: 20px;
+                    width: 100%;
+                }
+                
+                &--secondary {
+                    background: $white;
+                    
+                    &:hover {
+                        background: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &__search {
+        margin: 0 auto 80px;
+        position: relative;
+        width: 770px;
+        z-index: 8;
+        
+        @include MQ(920px) {
+            width: 775px;
+        }
+        
+        @include MQ(870px) {
+            width: 680px;
+        }
+        
+        @include MQ(600px) {
+            margin: 0 auto 70px;
+            width: 100%;
+        }
+        
+        &-input {
+            background: $white;
+            border: 1px solid $gray-dark;
+            border-radius: 5px;
+            height: 45px;
+            font-size: 16px;
+            margin: 3px 35px 0;
+            outline: none;
+            padding-right: 40px;
+            position: absolute;
+            right: -35px;
+            transition: opacity .5s ease-in-out;
+            width: 100%;
+            
+            &::placeholder {
+                font-size: 16px;
+                font-weight: 400;
+                
+                @include MQ($M) {
+                    font-size: 14px;
+                }
+            }
+        }
+        
+        &-btn {
+            display: block;
+            height: 15px;
+            margin: 10px 0;
+            padding: 15px 16px;
+            position: absolute;
+            right: 25px;
+            width: 40px;
+            
+            &::after {
+                display: none;
+            }
+            
+            i {
+                color: $gray-dark;
+                font-size: 15px;
+                margin: -7px;
+                right: 0;
+                position: absolute;
+                transition: opacity .5s ease-in-out;
+            }
+        }
+    }
+}

@@ -1,0 +1,178 @@
+//Footer code
+footer {
+    background: $white;
+    padding: 40px 0;
+    
+    @include MQ($M) {
+        padding: 20px 0;
+    }
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        
+        li {
+            margin: 5px 0 10px;
+            list-style: none;
+            
+            @include MQ($M) {
+                margin: 3px 0;
+            }
+            
+            a {
+                color: $gray-dark;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 600;
+                transition: all .5s ease-in-out;
+                
+                @include MQ($M) {
+                    font-size: 12px;
+                }
+                
+                &:hover {
+                    color: $primary;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+    a {
+        text-decoration: none;
+        
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
+
+.footer {
+    &__container {
+        align-items: flex-start;
+        margin: auto;
+        
+        @include MQ($L) {
+            flex-wrap: wrap;
+        }
+        
+        @include MQ($M) {
+            justify-content: flex-start;
+            flex-direction: column;
+            margin: 125px 40px 0;
+            max-height: 350px;
+            width: calc(100% - 80px);
+        }
+
+        @include MQ($S) {
+            margin: 125px 20px 100px;
+            width: calc(100% - 40px);
+        }
+    }
+    
+    &__column {
+        max-width: 200px;
+        width: 20%;
+        
+        @include MQ($S) {
+            width: 48%;
+        }
+        
+        &-title, &-title a {
+            color: $primary;
+            font-weight: 700;
+            margin: 0 0 20px;
+            transition: color .5s ease-in-out;
+            
+            @include MQ($M) {
+                font-size: 14px;
+                margin: 20px 0 5px;
+            }
+        }
+        
+        &-title a:hover {
+            color: $black;
+        }
+        
+        &--logo {
+            @include MQ($M) {
+                left: 0;
+                margin-top: 0;
+                max-width: 100%;
+                order: 1;
+                position: absolute;
+                text-align: center;
+                top: -125px;
+                width: 100%;
+            }
+        }
+
+        @include MQ($S) {
+            &:nth-child(2) {
+                order: 2;
+            }
+    
+            &:nth-child(3) {
+                order: 5;
+            }
+    
+            &:nth-child(4) {
+                order: 3;
+            }
+    
+            &:nth-child(5) {
+                order: 4;
+            }
+    
+            &:nth-child(6) {
+                order: 6;
+            }
+        }
+    }
+    
+    &__logo {
+        transition: opacity .5s ease-in-out;
+        width: 160px;
+        
+        @include MQ($M) {
+            width: 120px;
+        }
+        
+        &:hover {
+            opacity: .5;
+        }
+    }
+    
+    &__social {
+        margin: 50px 0 20px;
+        
+        @include MQ($M) {
+            bottom: -100px;
+            margin: 0;
+            order: 7;
+            position: absolute;
+            left: 0;
+        }
+        
+        &-list {
+            align-items: center;
+            
+            @include MQ($S) {
+                justify-content: center;
+            }
+            
+            img {
+                margin: 0 20px 20px 0;
+                transition: opacity .5s ease-in-out;
+                
+                @include MQ($S) {
+                    margin: 5px 10px 20px 0;
+                }
+                
+                &:hover {
+                    opacity: .6;
+                } 
+            }
+        }
+    }
+}
