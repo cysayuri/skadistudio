@@ -154,7 +154,7 @@ h2 {
 
 h3 {
   font-family: "Unbounded", "Roboto", "Calibri", "sans-serif";
-  font-size: 42px;
+  font-size: 24px;
   font-weight: 750;
   line-height: 1.2em; }
   @media screen and (max-width: 758px) {
@@ -1125,3 +1125,67 @@ footer {
     height: 335px;
     object-fit: contain;
     width: 570px; }
+
+.about {
+  margin: 70px auto 80px;
+  padding: 0;
+  position: relative; }
+  .about::before, .about::after {
+    background: url(../images/sections/somos/somos-border.svg);
+    background-repeat: no-repeat;
+    content: '';
+    height: 110px;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 0; }
+  .about::before {
+    top: -110px; }
+  .about::after {
+    bottom: -110px;
+    transform: rotate(180deg); }
+  .about__container {
+    margin: 0 auto;
+    max-width: 930px; }
+    .about__container::before, .about__container::after {
+      background: url(../images/sections/somos/somos-effect.svg);
+      background-repeat: no-repeat;
+      content: '';
+      height: 550px;
+      position: absolute;
+      top: -90px;
+      width: 50px;
+      z-index: 5; }
+    .about__container::before {
+      left: -120px; }
+    .about__container::after {
+      right: -120px; }
+    .about__container h3 {
+      margin: 0 0 10px;
+      padding-left: 20px;
+      position: relative; }
+      .about__container h3::before {
+        background: #38F2F2;
+        content: '';
+        height: 100%;
+        left: 0;
+        max-height: 35px;
+        position: absolute;
+        top: 0;
+        width: 4px; }
+  .about__content {
+    align-items: center; }
+  .about__txt {
+    width: 60%; }
+    .about__txt p {
+      color: #263640;
+      font-family: "Julius", "Roboto", "Calibri", "sans-serif";
+      line-height: 1.5em;
+      margin: 30px 0 0;
+      text-transform: uppercase; }
+  .about__img {
+    text-align: right;
+    width: 40%; }
+    .about__img img {
+      object-fit: contain;
+      width: 285px; }
