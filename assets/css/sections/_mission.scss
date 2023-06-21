@@ -1,27 +1,7 @@
-.about {
-    margin: 70px auto 80px;
-    padding: 0;
-    position: relative;
-
-    &::before, &::after {
-        background: url(../images/sections/somos/somos-border.svg);
-        background-repeat: no-repeat;
-        content: '';
-        height: 110px;
-        left: 0;
-        position: absolute;
-        width: 100vw;
-        z-index: 1;
-    }
-    
-    &::before {
-        top: -110px;
-    }
-    
-    &::after {
-        bottom: -110px;
-        transform: rotate(180deg);
-    }
+.mission {
+    background: url(../images/sections/missao/missao.jpg);
+    margin: 70px auto;
+    padding: 170px 0;
     
     &__container {
         margin: 0 auto;
@@ -30,8 +10,8 @@
         &::before, &::after {
             background: url(../images/sections/somos/somos-effect.svg);
             background-repeat: no-repeat;
-            content: '';
-            height: 565px;
+            // content: '';
+            height: 550px;
             position: absolute;
             top: -90px;
             width: 50px;
@@ -47,12 +27,13 @@
         }
         
         h3 {
+            color: $primary;
             margin: 0 0 10px;
             padding-left: 20px;
             position: relative;
 
             &::before {
-                background: $primary;
+                background: #F9FAFC;
                 content: '';
                 height: 100%;
                 left: 0;
@@ -72,7 +53,7 @@
         width: 60%;
 
         p {
-            color: $secondary;
+            color: #F9FAFC;
             font-family: $font-secondary;
             line-height: 1.6em;
             margin: 30px 0 0;

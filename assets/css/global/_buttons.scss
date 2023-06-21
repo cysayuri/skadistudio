@@ -2,7 +2,6 @@
 button, .btn, input[type="submit"] {
     align-items: center;
     background: $primary;
-    border: 1px solid $primary;
     border-radius: 50px;
     cursor: pointer;
     color: #000;
@@ -20,7 +19,7 @@ button, .btn, input[type="submit"] {
     width: fit-content;
     
     &:hover {
-        background: transparent;
+        background: $secondary;
         color: $primary;
     }
 }
