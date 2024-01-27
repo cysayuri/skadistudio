@@ -1,5 +1,5 @@
 .about {
-    margin: 70px auto 80px;
+    margin: 60px auto 70px;
     padding: 0;
     position: relative;
 
@@ -31,7 +31,7 @@
             background: url(../images/sections/somos/somos-effect.svg);
             background-repeat: no-repeat;
             content: '';
-            height: 565px;
+            height: 600px;
             position: absolute;
             top: -90px;
             width: 50px;
@@ -69,13 +69,13 @@
     }
 
     &__txt {
-        width: 60%;
+        width: 100%;
 
         p {
             color: $secondary;
             font-family: $font-secondary;
             line-height: 1.6em;
-            margin: 30px 0 0;
+            margin: 20px 0 0;
             text-transform: uppercase;
         }
     }

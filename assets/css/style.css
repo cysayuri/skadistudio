@@ -31,6 +31,7 @@ body {
   font-family: "Unbounded", "Roboto", "Calibri", "sans-serif";
   margin: 0;
   overflow-x: hidden;
+  outline: none;
   padding: 0;
   position: relative; }
 
@@ -163,7 +164,7 @@ h3 {
 
 h4 {
   font-family: "Unbounded", "Roboto", "Calibri", "sans-serif";
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 580;
   line-height: 1.2em; }
   @media screen and (max-width: 758px) {
@@ -172,7 +173,7 @@ h4 {
 
 h5 {
   font-family: "Unbounded", "Roboto", "Calibri", "sans-serif";
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 580;
   line-height: 1.2em; }
   @media screen and (max-width: 758px) {
@@ -1117,16 +1118,29 @@ footer {
   background-size: cover;
   height: 100vh;
   width: 100vw; }
+  .banner::after {
+    background: url(../images/global/floco.svg) no-repeat;
+    background-size: contain;
+    content: '';
+    height: 500px;
+    left: 50%;
+    opacity: .06;
+    position: absolute;
+    top: 70px;
+    transform: translateX(-50%);
+    width: 500px;
+    z-index: 0; }
   @media screen and (max-width: 758px) {
     .banner {
       height: 200px; } }
   .banner img {
     height: 335px;
     object-fit: contain;
-    width: 570px; }
+    width: 570px;
+    z-index: 1; }
 
 .about {
-  margin: 70px auto 80px;
+  margin: 60px auto 70px;
   padding: 0;
   position: relative; }
   .about::before, .about::after {
@@ -1150,7 +1164,7 @@ footer {
       background: url(../images/sections/somos/somos-effect.svg);
       background-repeat: no-repeat;
       content: '';
-      height: 565px;
+      height: 600px;
       position: absolute;
       top: -90px;
       width: 50px;
@@ -1175,12 +1189,12 @@ footer {
   .about__content {
     align-items: center; }
   .about__txt {
-    width: 60%; }
+    width: 100%; }
     .about__txt p {
       color: #263640;
       font-family: "Julius", "Roboto", "Calibri", "sans-serif";
       line-height: 1.6em;
-      margin: 30px 0 0;
+      margin: 20px 0 0;
       text-transform: uppercase; }
   .about__img {
     text-align: right;
@@ -1192,7 +1206,7 @@ footer {
 .mission {
   background: url(../images/sections/missao/missao.jpg);
   margin: 70px auto;
-  padding: 170px 0; }
+  padding: 150px 0; }
   .mission__container {
     margin: 0 auto;
     max-width: 930px; }
@@ -1239,11 +1253,11 @@ footer {
       object-fit: contain;
       width: 285px; }
 
-.projs {
+.services {
   margin: 70px auto 80px;
-  padding: 30px 0 0;
+  padding: 30px 0 10px;
   position: relative; }
-  .projs::before, .projs::after {
+  .services::before, .services::after {
     background: url(../images/sections/somos/somos-border.svg);
     background-repeat: no-repeat;
     content: '';
@@ -1252,11 +1266,95 @@ footer {
     position: absolute;
     width: 100vw;
     z-index: 1; }
-  .projs::before {
+  .services::before {
     top: -110px; }
-  .projs::after {
+  .services::after {
     bottom: -110px;
-    transform: rotate(180deg); }
+    transform: rotate(180deg) scaleX(-1); }
+  .services__container {
+    margin: 0 auto;
+    max-width: 930px; }
+    .services__container::before, .services__container::after {
+      background: url(../images/sections/servicos/effect-sides.svg);
+      background-repeat: no-repeat;
+      content: '';
+      height: 50px;
+      position: absolute;
+      width: 370px;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      z-index: 5; }
+    .services__container::before {
+      left: -290px; }
+    .services__container::after {
+      right: -270px; }
+    .services__container h3 {
+      margin: 0 0 50px;
+      padding-left: 20px;
+      position: relative; }
+      .services__container h3::before {
+        background: #38F2F2;
+        content: '';
+        height: 100%;
+        left: 0;
+        max-height: 35px;
+        position: absolute;
+        top: 0;
+        width: 4px; }
+  .services__content {
+    align-items: center;
+    margin: 30px 0; }
+    .services__content h3 {
+      font-size: 18px;
+      margin: 0 0 20px;
+      padding: 0; }
+      .services__content h3::before {
+        display: none; }
+  .services__txt {
+    width: 70%; }
+    .services__txt p {
+      color: #263640;
+      font-family: "Julius", "Roboto", "Calibri", "sans-serif";
+      line-height: 1.6em;
+      margin: 20px 0 0;
+      text-transform: uppercase; }
+  .services__img {
+    margin-right: 30px;
+    max-width: 270px;
+    position: relative;
+    width: 30%; }
+    .services__img::before {
+      background: url(../images/sections/servicos/effect-border.svg) no-repeat;
+      content: '';
+      height: 70px;
+      left: -20px;
+      position: absolute;
+      top: -13px;
+      transform: rotate(90deg);
+      width: 70px;
+      z-index: 5; }
+    .services__img img {
+      height: 170px;
+      object-fit: contain;
+      width: 100%; }
+
+.projs {
+  background: url(../images/sections/missao/missao.jpg);
+  margin: 70px auto 80px;
+  padding: 120px 0 140px;
+  position: relative; }
+  .projs::after {
+    background: url(../images/sections/somos/somos-border.svg);
+    background-repeat: no-repeat;
+    content: '';
+    height: 110px;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 1; }
+  .projs::after {
+    bottom: -70px;
+    transform: scaleX(-1); }
   .projs__container {
     margin: 0 auto;
     max-width: 930px; }
@@ -1264,23 +1362,25 @@ footer {
       background: url(../images/sections/projs/projs-effect.svg);
       background-repeat: no-repeat;
       content: '';
+      filter: invert(1);
       height: 415px;
       position: absolute;
       width: 330px;
       z-index: 5; }
     .projs__container::before {
-      bottom: 0;
+      bottom: -90px;
       left: -120px;
       transform: rotate(180deg); }
     .projs__container::after {
       right: -120px;
       top: -40px; }
     .projs__container h3 {
+      color: #38F2F2;
       margin: 0 0 50px;
       padding-left: 20px;
       position: relative; }
       .projs__container h3::before {
-        background: #38F2F2;
+        background: #fff;
         content: '';
         height: 100%;
         left: 0;
@@ -1299,7 +1399,7 @@ footer {
   .projs__txt {
     width: 70%; }
     .projs__txt p {
-      color: #263640;
+      color: #fff;
       font-family: "Julius", "Roboto", "Calibri", "sans-serif";
       line-height: 1.6em;
       margin: 30px 0 0;
@@ -1312,5 +1412,66 @@ footer {
       height: 170px;
       object-fit: contain;
       width: 100%; }
-  .projs__btn {
-    margin-top: 40px; }
+
+.ctt {
+  margin: 70px auto 80px;
+  padding: 10px 0 0;
+  position: relative; }
+  .ctt::after {
+    background: url(../images/sections/somos/somos-border.svg);
+    background-repeat: no-repeat;
+    content: '';
+    height: 110px;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 1; }
+  .ctt::after {
+    bottom: -110px;
+    transform: rotate(180deg) scaleX(-1); }
+  .ctt__container {
+    margin: 0 auto;
+    max-width: 930px;
+    position: relative; }
+    .ctt__container::before, .ctt__container::after {
+      background: url(../images/global/contact-effect.svg);
+      background-repeat: no-repeat;
+      content: '';
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      width: 190px;
+      z-index: 5; }
+    .ctt__container::before {
+      left: -20%;
+      margin-top: -40px; }
+    .ctt__container::after {
+      left: 100%;
+      margin-top: 40px; }
+    .ctt__container h3 {
+      margin: -10px 0 40px;
+      padding-left: 20px;
+      position: relative; }
+      .ctt__container h3::before {
+        background: #38F2F2;
+        content: '';
+        height: 100%;
+        left: 0;
+        max-height: 35px;
+        position: absolute;
+        top: 0;
+        width: 4px; }
+  .ctt__content h3 {
+    font-size: 20px;
+    margin: 0 0 30px;
+    padding: 0; }
+    .ctt__content h3::before {
+      display: none; }
+  .ctt__content p {
+    font-family: "Julius", "Roboto", "Calibri", "sans-serif";
+    line-height: 1.6em;
+    margin: 30px 0 40px;
+    text-transform: uppercase; }
+  .ctt__btn {
+    margin: 40px 0 -20px; }

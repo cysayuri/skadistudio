@@ -8,17 +8,19 @@
     // position: relative;
     width: 100vw;
     
-    // &::after {
-    //     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #231F20;
-    //     content: '';
-    //     height: 100%;
-    //     left: 0;
-    //     mix-blend-mode: multiply;
-    //     opacity: 0.5;
-    //     position: absolute;
-    //     top: 0;
-    //     width: 100%;
-    // }
+    &::after {
+        background: url(../images/global/floco.svg) no-repeat;
+        background-size: contain;
+        content: '';
+        height: 500px;
+        left: 50%;
+        opacity: .06;
+        position: absolute;
+        top: 70px;
+        transform: translateX(-50%);
+        width: 500px;
+        z-index: 0;
+    }
     
     @include MQ($S) {
         height: 200px;
@@ -44,5 +46,6 @@
         height: 335px;
         object-fit: contain;
         width: 570px;
+        z-index: 1;
     }
 }

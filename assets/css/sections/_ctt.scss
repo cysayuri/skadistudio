@@ -1,0 +1,89 @@
+.ctt {
+    margin: 70px auto 80px;
+    padding: 10px 0 0;
+    position: relative;
+    
+    &::after {
+        background: url(../images/sections/somos/somos-border.svg);
+        background-repeat: no-repeat;
+        content: '';
+        height: 110px;
+        left: 0;
+        position: absolute;
+        width: 100vw;
+        z-index: 1;
+    }
+    
+    &::after {
+        bottom: -110px;
+        transform: rotate(180deg) scaleX(-1);
+    }
+    
+    &__container {
+        margin: 0 auto;
+        max-width: 930px;
+        position: relative;
+        
+        &::before, &::after {
+            background: url(../images/global/contact-effect.svg);
+            background-repeat: no-repeat;
+            content: '';
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) rotate(90deg);
+            width: 190px;
+            z-index: 5;
+        }
+        
+        &::before {
+            left: -20%;
+            margin-top: -40px;
+        }
+        
+        &::after {
+            left: 100%;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            margin: -10px 0 40px;
+            padding-left: 20px;
+            position: relative;
+            
+            &::before {
+                background: $primary;
+                content: '';
+                height: 100%;
+                left: 0;
+                max-height: 35px;
+                position: absolute;
+                top: 0;
+                width: 4px;
+            }
+        }
+    }
+
+    &__content {
+        h3 {
+            font-size: 20px;
+            margin: 0 0 30px;
+            padding: 0;
+            
+            &::before {
+                display: none;
+            }
+        }
+        
+        p {
+            font-family: $font-secondary;
+            line-height: 1.6em;
+            margin: 30px 0 40px;
+            text-transform: uppercase;
+        }
+    }
+    
+    &__btn {
+        margin: 40px 0 -20px;
+    }
+}
