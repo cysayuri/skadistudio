@@ -43,6 +43,11 @@
                 width: 4px;
             }
         }
+        
+        p b {
+            font-family: $font;
+            font-weight: 500;
+        }
     }
 
     &__content {

@@ -50,7 +50,7 @@
         }
         
         h3 {
-            margin: 0 0 50px;
+            margin: 0 0 40px;
             padding-left: 20px;
             position: relative;
             
@@ -65,11 +65,18 @@
                 width: 4px;
             }
         }
+        
+        p b {
+            font-family: $font;
+            font-weight: 500;
+            margin: 0 0 50px;
+            text-transform: uppercase;
+        }
     }
     
     &__content {
         align-items: center;
-        margin: 30px 0;
+        margin: 40px 0;
         
         h3 {
             font-size: 18px;
@@ -95,7 +102,7 @@
     }
     
     &__img {
-        margin-right: 30px;
+        margin-right: 40px;
         max-width: 270px;
         position: relative;
         width: 30%;
@@ -104,9 +111,9 @@
             background: url(../images/sections/servicos/effect-border.svg) no-repeat;
             content: '';
             height: 70px;
-            left: -20px;
+            left: -17px;
             position: absolute;
-            top: -13px;
+            top: -17px;
             transform: rotate(90deg);
             width: 70px;
             z-index: 5;
@@ -114,7 +121,7 @@
 
         img {
             height: 170px;
-            object-fit: contain;
+            object-fit: cover;
             width: 100%;
         }
     }

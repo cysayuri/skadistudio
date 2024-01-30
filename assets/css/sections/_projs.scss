@@ -15,10 +15,6 @@
         z-index: 1;
     }
     
-    // &::before {
-    //     top: -110px;
-    // }
-    
     &::after {
         bottom: -70px;
         transform: scaleX(-1);
@@ -36,7 +32,6 @@
             height: 415px;
             position: absolute;
             width: 330px;
-            z-index: 5;
         }
         
         &::before {
@@ -67,42 +62,64 @@
                 width: 4px;
             }
         }
-    }
-    
-    &__content {
-        align-items: center;
-        margin: 30px 0;
         
-        h3 {
-            margin: 0 0 30px;
-            padding: 0;
-            
-            &::before {
-                display: none;
-            }
-        }
-    }
-    
-    &__txt {
-        width: 70%;
-        
-        p {
+        p b {
             color: #fff;
-            font-family: $font-secondary;
-            line-height: 1.6em;
-            margin: 30px 0 0;
+            font-family: $font;
+            font-weight: 500;
             text-transform: uppercase;
         }
     }
     
+    &__list {
+        align-items: center;
+        margin: 0 -1%;
+        
+        &-item {
+            cursor: pointer;
+            margin: 6% 1% -3%;
+            text-align: center;
+            width: 30%;
+            z-index: 2;
+            
+            &:nth-child(2) {
+                margin: 30px auto 20px;
+            }            
+            
+            h3 {
+                color: #fff;
+                font-size: 18px;
+                height: 50px;
+                margin: 0 0 30px;
+                padding: 0;
+                text-transform: uppercase;
+                transition: color .5s ease-in-out;
+                
+                &::before {
+                    display: none;
+                }
+            }
+            
+            &:hover {
+                h3 {
+                    color: $primary;
+                }
+                
+                img {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+    
     &__img {
-        margin-right: 30px;
-        max-width: 270px;
-        width: 30%;
+        height: 180px;
+        margin-bottom: 20px;
         
         img {
-            height: 170px;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity .5s ease-in-out;
             width: 100%;
         }
     }
