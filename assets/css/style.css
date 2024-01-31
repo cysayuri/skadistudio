@@ -716,6 +716,9 @@ html:not([data-scroll='0']) .menu__burguer, .page-template-contato .menu__burgue
     html:not([data-scroll='0']) .menu__burguer.is-active:before, html:not([data-scroll='0']) .menu__burguer.is-active:after, .page-template-contato .menu__burguer.is-active:before, .page-template-contato .menu__burguer.is-active:after, .error404 .menu__burguer.is-active:before, .error404 .menu__burguer.is-active:after, .single .menu__burguer.is-active:before, .single .menu__burguer.is-active:after {
       background: #fff; } }
 
+html:not([data-scroll='0']) .menu__logo img, .page-template-contato .menu__logo img, .error404 .menu__logo img, .single .menu__logo img {
+  filter: none; }
+
 menu {
   background: transparent;
   box-shadow: none;
@@ -754,7 +757,7 @@ menu {
         padding-top: 15px; } }
     menu ul li {
       list-style: none;
-      margin: 0 0 0 50px;
+      margin: 0 0 0 25px;
       position: relative; }
       @media screen and (max-width: 960px) {
         menu ul li {
@@ -838,7 +841,8 @@ menu {
       .menu__logo {
         width: auto; } }
     .menu__logo img {
-      transition: opacity .5s ease-in-out;
+      filter: invert(1) brightness(5);
+      transition: all .5s ease-in-out;
       width: 210px; }
       @media screen and (max-width: 1170px) {
         .menu__logo img {
@@ -1089,10 +1093,10 @@ footer {
       opacity: 1;
       pointer-events: all;
       z-index: 11; }
-    .modal__content#modal-peculiar-paws video {
+    .modal__content video {
       height: 100%;
-      width: 100%;
-      object-fit: contain; }
+      object-fit: contain;
+      width: 100%; }
   .modal__txt {
     width: 70%; }
     .modal__txt p {
@@ -1109,6 +1113,31 @@ footer {
       height: 170px;
       object-fit: contain;
       width: 100%; }
+  .modal #modal-red-rim {
+    margin: 0 -20px; }
+    .modal #modal-red-rim .flex--sb {
+      align-items: center; }
+    .modal #modal-red-rim .modal__txt {
+      width: 50%; }
+      .modal #modal-red-rim .modal__txt p {
+        margin: 0; }
+    .modal #modal-red-rim .modal__img {
+      max-width: 70%;
+      width: 100%; }
+  .modal #modal-prox-empreendimentos {
+    margin: 0 -30px 0 -20px; }
+    .modal #modal-prox-empreendimentos .modal__txt {
+      width: 60%; }
+      .modal #modal-prox-empreendimentos .modal__txt p {
+        margin: 0; }
+    .modal #modal-prox-empreendimentos .modal__img {
+      margin-right: 30px;
+      max-width: 40%;
+      width: 100%; }
+      .modal #modal-prox-empreendimentos .modal__img img {
+        height: auto;
+        object-fit: contain;
+        width: 100%; }
   .modal.active {
     opacity: 1;
     pointer-events: all;
@@ -1274,6 +1303,7 @@ footer {
     text-align: right;
     width: 40%; }
     .mission__img img {
+      filter: invert(1) brightness(5);
       object-fit: contain;
       width: 285px; }
 

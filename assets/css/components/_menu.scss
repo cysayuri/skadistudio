@@ -34,6 +34,10 @@ html:not([data-scroll='0']), .page-template-contato, .error404, .single {
                 }
             }
         }
+        
+        &__logo img {
+            filter: none;
+        }
     }
 }
 
@@ -87,7 +91,7 @@ menu {
         
         li {
             list-style: none;
-            margin: 0 0 0 50px;
+            margin: 0 0 0 25px;
             position: relative;
             
             @include MQ($M) {
@@ -201,7 +205,8 @@ menu {
         }
         
         img {
-            transition: opacity .5s ease-in-out;
+            filter: invert(1) brightness(5);
+            transition: all .5s ease-in-out;
             width: 210px;
             
             @include MQ($L) {
