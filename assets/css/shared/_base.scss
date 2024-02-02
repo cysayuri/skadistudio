@@ -40,7 +40,7 @@ body {
 .show-desk {
     display: block;
     
-    @include MQ($L) {
+    @include MQ($M) {
         display: none;
     }
 }
@@ -48,7 +48,7 @@ body {
 .show-tablet {
     display: none;
     
-    @include MQ($L) {
+    @include MQ($M) {
         display: block;
     }
 }

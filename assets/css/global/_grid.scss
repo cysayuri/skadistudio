@@ -14,15 +14,17 @@
 
 .wrapper--small {
     margin: 0 auto;
-    max-width: 920px;
+    max-width: 930px;
     position: relative;
     
     @include MQ($L) {
         margin: 0 40px;
+        max-width: 70vw;
     }
     
     @include MQ($S) {
-        margin: 0 20px;
+        margin: 0 40px;
+        max-width: 100%;
     }
 }
 

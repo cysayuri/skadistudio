@@ -21,8 +21,15 @@
     
     &__container {
         margin: 0 auto;
-        max-width: 930px;
         position: relative;
+            
+        @include MQ($S) {
+            margin: 0 40px;
+        }
+            
+        @include MQ($XS) {
+            margin: 0 20px;
+        }
         
         &::before, &::after {
             background: url(../images/global/contact-effect.svg);
@@ -34,16 +41,32 @@
             transform: translateY(-50%) rotate(90deg);
             width: 190px;
             z-index: 5;
+            
+            @include MQ($S) {
+                display: none;
+            }
         }
         
         &::before {
             left: -20%;
             margin-top: -40px;
+        
+            @include MQ($L) {
+                left: -25%;
+            }
+        
+            @include MQ($M) {
+                left: -27%;
+            }
         }
         
         &::after {
             left: 100%;
             margin-top: 40px;
+        
+            @include MQ($M) {
+                left: 95%;
+            }
         }
         
         h3 {
@@ -66,9 +89,15 @@
 
     &__content {
         h3 {
-            font-size: 20px;
+            font-size: 18px;
+            font-family: $font;
+            text-transform: uppercase;
             margin: 0 0 30px;
             padding: 0;
+            
+            @include MQ($S) {
+                font-size: 16px;
+            }
             
             &::before {
                 display: none;
@@ -85,5 +114,11 @@
     
     &__btn {
         margin: 40px 0 -20px;
+        
+        .btn {
+            @include MQ($S) {
+                font-size: 16px;
+            }
+        }
     }
 }

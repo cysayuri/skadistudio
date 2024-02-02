@@ -27,7 +27,7 @@ h3 {
   line-height: 1.2em;
   
   @include MQ($S) {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 
@@ -38,7 +38,7 @@ h4 {
   line-height: 1.2em;
   
   @include MQ($S) {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
@@ -65,6 +65,10 @@ p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2em;
+
+  @include MQ($S) {
+    font-size: 14px;
+  }
 }
 
 span {

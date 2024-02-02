@@ -19,6 +19,18 @@
         padding: 70px;
         width: 100%;
         
+        @include MQ($L) {
+            width: 90vw;
+        }
+        
+        @media screen and (min-height: 800px) {
+            height: auto;
+        }
+
+        @include MQ($XS) {
+            padding: 40px 50px;
+        }
+        
         h3 {
             color: $primary;
             margin: 0 0 40px;
@@ -45,6 +57,11 @@
         opacity: 0;
         pointer-events: none;
         z-index: -1;
+            
+        @include MQ($S) {
+            margin-right: -30px;
+            padding-right: 20px;
+        }
         
         &.active {
             height: 100%;
@@ -84,16 +101,98 @@
         }
     }
     
+    #modal-peculiar-paws {
+        @media screen and (min-height: 800px) {
+            flex-direction: column-reverse;
+            margin-top: 20px;
+        }
+
+        @include MQ(800px) {
+            margin: 0 -30px -40px -20px;
+        }
+
+        @include MQ($XS) {
+            margin: 30px -30px -40px -20px;
+        }
+            
+        @include MQ($S) {
+            flex-direction: column-reverse;
+            overflow-y: auto;
+        }
+        
+        .modal {
+            &__img, &__txt {
+                width: 100%;
+            }
+
+            &__img {
+                height: 100%;
+                margin: 0;
+                max-width: 300px;
+                
+                @include MQ($M) {
+                    margin: 50px 0 0;
+                }
+                
+                @media screen and (max-width: 1024px) and (min-height: 1200px) {
+                    margin-top: 50px;
+                    max-width: 400px;
+                }
+
+                @include MQ(800px) {
+                    margin: 30px 0 0;
+                    max-width: 270px;
+                }
+            }
+        }
+    }
+    
     #modal-red-rim {
         margin: 0 -20px;
         
+        @include MQ($L) {
+            margin: 20px -20px 0;
+        }
+        
+        @include MQ($M) {
+            margin: 0 0 20px;
+        }
+
+        @include MQ(800px) {
+            margin: 50px 0 10px;
+        }
+
+        @include MQ($S) {
+            margin: 40px -30px 10px -20px;
+        }
+
+        @include MQ($XS) {
+            margin: 30px -40px 10px -20px;
+        }
+        
         .flex--sb {
             align-items: center;
+        
+            @media screen and (min-height: 800px) {
+                flex-direction: column-reverse;
+            }
+            
+            @include MQ($S) {
+                flex-direction: column-reverse;
+            }
         }
         
         .modal {
             &__txt {
                 width: 50%;
+        
+                @media screen and (min-height: 800px) {
+                    width: 100%;
+                }
+            
+                @include MQ($S) {
+                    width: 100%;
+                }
                 
                 p {
                     margin: 0;
@@ -103,6 +202,22 @@
             &__img {
                 max-width: 70%;
                 width: 100%;
+        
+                @include MQ($L) {
+                    width: 65%;
+                }
+        
+                @media screen and (min-height: 800px) {
+                    margin: 40px 0 0;
+                    max-width: 100%;
+                    width: 100%;
+                }
+                
+                @include MQ($S) {
+                    margin: 40px 0 0;
+                    max-width: 100%;
+                    width: 100%;
+                }
             }
         }
     }
@@ -110,9 +225,36 @@
     #modal-prox-empreendimentos {
         margin: 0 -30px 0 -20px;
         
+        @media screen and (min-height: 800px) {
+            flex-direction: column-reverse;
+            margin: -10px 0 30px;
+        }
+        
+        @include MQ($S) {
+            flex-direction: column-reverse;
+            margin: -10px -40px 0 -20px;
+        }
+
+        @include MQ($XS) {
+            justify-content: space-around;
+            margin: -80px -40px 0 -20px;
+        }
+        
         .modal {
             &__txt {
                 width: 60%;
+        
+                @media screen and (min-height: 800px) {
+                    width: 100%;
+                }
+
+                @include MQ($S) {
+                    width: 100%;
+                }
+
+                @include MQ($XS) {
+                    margin: 50px 0 20px;
+                }
                 
                 p {
                     margin: 0;
@@ -123,6 +265,16 @@
                 margin-right: 30px;
                 max-width: 40%;
                 width: 100%;
+        
+                @media screen and (min-height: 800px) {
+                    margin: 40px 0 0;
+                    max-width: 100%;
+                }
+
+                @include MQ($S) {
+                    margin: -20px 0 0;
+                    max-width: 100%;
+                }
                 
                 img {
                     height: auto;

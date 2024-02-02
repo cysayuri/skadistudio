@@ -2,6 +2,22 @@
 footer {
     background: $secondary;
     padding: 40px 0 30px;
+        
+    @include MQ($L) {
+        padding: 40px 40px 30px;
+    }
+        
+    @include MQ($M) {
+        padding: 40px 20px 30px;
+    }
+        
+    @include MQ($S) {
+        padding: 60px 20px 40px;
+    }
+        
+    @include MQ($XS) {
+        padding: 70px 20px 30px;
+    }
 }
 
 .footer {
@@ -10,7 +26,9 @@ footer {
         margin: auto;
         
         @include MQ($S) {
-            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            justify-content: center;
+            text-align: center;
         }
     }
     
@@ -26,6 +44,10 @@ footer {
             font-family: $font-secondary;
             font-weight: 300;
             margin: 0;
+            
+            @include MQ($S) {
+                margin: 30px 0 0;
+            }
         }
     }
     

@@ -5,7 +5,10 @@
     
     &__container {
         margin: 0 auto;
-        max-width: 930px;
+        
+        @include MQ($L) {
+            max-width: 85vw;
+        }
 
         &::before, &::after {
             background: url(../images/sections/somos/somos-effect.svg);
@@ -57,6 +60,10 @@
     &__txt {
         width: 60%;
 
+        @include MQ($M) {
+            width: 100%;
+        }
+
         p {
             color: #F9FAFC;
             font-family: $font-secondary;
@@ -69,6 +76,10 @@
     &__img {
         text-align: right;
         width: 40%;
+
+        @include MQ($M) {
+            display: none;
+        }
 
         img {
             filter: invert(1) brightness(5);

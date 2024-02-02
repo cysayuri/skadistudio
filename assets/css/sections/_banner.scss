@@ -7,6 +7,18 @@
     height: 100vh;
     // position: relative;
     width: 100vw;
+
+    @include MQ($XL) {
+        height: 680px;
+    }
+
+    @include MQ($S) {
+        height: 450px;
+    }
+
+    @include MQ($XS) {
+        height: 470px;
+    }
     
     &::after {
         background: url(../images/global/floco.svg) no-repeat;
@@ -20,32 +32,30 @@
         transform: translateX(-50%);
         width: 500px;
         z-index: 0;
-    }
-    
-    @include MQ($S) {
-        height: 200px;
-    }
-    
-    // &__title {
-    //     bottom: 50px;
-    //     left: 0;
-    //     position: absolute;
-    //     z-index: 1;
-        
-    //     @include MQ($S) {
-    //         bottom: 20px;
-    //     }
-        
-    //     .h1 {
-    //         color: #fff;
-    //         margin: 0;
-    //     }
-    // }
 
+        @include MQ($S) {
+            height: 290px;
+            width: 290px;
+        }
+
+        @include MQ($XS) {
+            height: 280px;
+            width: 280px;
+        }
+    }
+    
     img {
         height: 335px;
         object-fit: contain;
         width: 570px;
         z-index: 1;
+
+        @include MQ($S) {
+            width: 400px;
+        }
+
+        @include MQ($XS) {
+            width: 80%;
+        }
     }
 }

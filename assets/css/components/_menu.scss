@@ -1,10 +1,12 @@
 html:not([data-scroll='0']), .page-template-contato, .error404, .single {
     menu {
         background: #fff;
+        box-shadow: 5px 0 7px rgba(0, 0, 0, .3);
         
         ul li a {
             color: #000;
-            @include MQ($L) {
+            
+            @include MQ($M) {
                 color: #fff;
             }
             
@@ -23,12 +25,12 @@ html:not([data-scroll='0']), .page-template-contato, .error404, .single {
             }
             
             &.is-active {
-                @include MQ($L) {
+                @include MQ($M) {
                     border-color: #fff;
                 }
                 
                 &:before, &:after {
-                    @include MQ($L) {
+                    @include MQ($M) {
                         background: #fff;
                     }
                 }
@@ -37,6 +39,14 @@ html:not([data-scroll='0']), .page-template-contato, .error404, .single {
         
         &__logo img {
             filter: none;
+        }
+
+        &.is-active {
+            @include MQ($M) {
+                .menu__logo img {
+                    filter: invert(1) brightness(5);
+                }
+            }
         }
     }
 }
@@ -60,12 +70,18 @@ menu {
         width: 100vw;
     }
     
+    @include MQ($S) {
+        left: -4px;
+        top: -1px;
+        width: 101vw;
+    }
+    
     nav {
         align-items: center;
         margin: auto;
         max-width: 95%;
         
-        @include MQ($L) {
+        @include MQ($M) {
             max-width: 100%;
         }
     }
@@ -75,24 +91,20 @@ menu {
         padding: 0;
         // transition: all .5s ease-in-out;
         
-        @include MQ($L) {
+        @include MQ($M) {
             flex-direction: column;
             padding-top: 25px;
             width: 100%;
-        }
-        
-        @include MQ($S) {
-            padding-top: 10px;
-        }
-        
-        @include MQ($XS) {
-            padding-top: 15px;
         }
         
         li {
             list-style: none;
             margin: 0 0 0 25px;
             position: relative;
+
+            @include MQ($L) {
+                margin: 0 0 0 5px;
+            }
             
             @include MQ($M) {
                 margin: 0;
@@ -100,7 +112,7 @@ menu {
             }
             
             @include MQ($S) {
-                margin: 5px 0;
+                margin: -10px 0 20px 5px;
             }
             
             a {
@@ -114,23 +126,20 @@ menu {
                 transition: color .5s ease-in-out;
                 
                 @include MQ($L) {
-                    font-size: 18px;
-                    padding: 15px;
+                    font-size: 16px;
+                    padding: 20px 15px;
                 }
                 
                 @include MQ($M) {
+                    font-size: 18px;
                     font-weight: 400;
                     margin: 0;
-                    padding: 15px 0px 15px 20px;
+                    padding: 20px;
                 }
                 
                 @include MQ($S) {
-                    padding-left: 15px;
-                }
-                
-                @include MQ($XS) {
                     font-size: 16px;
-                    padding-left: 10px;
+                    padding: 15px;
                 }
                 
                 &:after {
@@ -148,6 +157,10 @@ menu {
                         bottom: 5px;
                         left: 20px;
                     }
+            
+                    @include MQ($S) {
+                        left: 12px;
+                    }
                 }
                 
                 &:hover {                    
@@ -156,11 +169,11 @@ menu {
                         width: 100%;
                         transition: width .3s ease-in-out, opacity .5s ease-in-out;
                         
-                        @include MQ($S) {
-                            left: 15px;
-                            transform: none;
-                            width: 0;
-                        }
+                        // @include MQ($S) {
+                        //     left: 15px;
+                        //     transform: none;
+                        //     width: 0;
+                        // }
                     }
                 }
             }
@@ -171,7 +184,7 @@ menu {
         font-size: 14px;
         margin-left: 5px;
         
-        @include MQ($L) {
+        @include MQ($M) {
             font-size: 16px;
             font-weight: 200;
             margin-left: 10px;
@@ -183,7 +196,7 @@ menu {
     transition: background .5s ease-in-out;
     
     &.is-active {
-        background: $primary;
+        background: $secondary;
         
         .menu__content {
             left: 0;
@@ -209,13 +222,13 @@ menu {
             transition: all .5s ease-in-out;
             width: 210px;
             
-            @include MQ($L) {
-                margin-top: 7px;
-                width: 90px;
+            @include MQ($M) {
+                margin-top: 5px;
+                width: 100%;
             }
             
             @include MQ($S) {
-                width: 50px;
+                width: 190px;
             }
             
             &:hover {
@@ -229,22 +242,16 @@ menu {
         padding: 15px 0;
         z-index: 2;
         
-        @include MQ($L) {
-            padding: 7px 0;
-        }
-        
         @include MQ($M) {
-            height: 120px;
+            height: 70px;
             max-width: 100vw;
+            padding: 8px 0;
         }
         
-        @include MQ($S) {
-            height: 75px;
-        }
-        
-        @include MQ($S) {
-            padding: 0;
-        }
+        // @include MQ($S) {
+        //     height: 75px;
+        //     padding: 0;
+        // }
     }
     
     &__list {
@@ -260,29 +267,9 @@ menu {
     &__header {
         align-items: flex-start;
         
-        @include MQ($L) {
-            align-items: center;
-        }
-        
         @include MQ($M) {
-            padding: 3px 0 5px;
-        }
-        
-        &-search {
-            @include MQ($L) {
-                width: 75%;
-            }   
-            
-            @include MQ($M) {
-                margin-left: 0;
-                margin-top: -10px;
-                max-width: 400px;
-                width: 70%;
-            }
-            
-            @include MQ($S) {
-                margin-top: -5px;
-            }   
+            align-items: center;
+            padding: 10px 0;
         }
     }
     
@@ -380,30 +367,24 @@ menu {
     }
     
     &__content {
-        @include MQ($L) {
-            background: $primary;
-            box-shadow: 4px 20px 10px rgba(0, 0, 0, .5);
-            bottom: 0;
-            height: calc(100vh - 110px);
+        @include MQ($M) {
+            background: $secondary;
+            box-shadow: 5px 10px 10px rgba(0, 0, 0, .5);
+            height: 100vh;
+            left: -200%;
             opacity: 1;
             padding: 10px 30px 0 20px;
             pointer-events: none;
-            position: fixed;
-            left: -200%;
-            transition: left .5s ease-in-out;
-            width: 27%;
-            z-index: -5;
-        }
-        
-        @include MQ($M) {
-            box-shadow: 5px 10px 10px rgba(0, 0, 0, .5);
             position: relative;
             top: 0px;
-            height: 100vh;
-            width: 35%;
+            transition: left .5s ease-in-out;
+            z-index: -5;
+            width: 40%;
         }
         
         @include MQ($S) {
+            height: calc(100vh - 65px);
+            top: 13px;
             width: 45%;
         }
         
@@ -412,15 +393,14 @@ menu {
             overflow-x: hidden;
             overflow-y: auto;
             padding: 0 15px 20px;
-            width: 100%;
+            width: 101%;
         }
     }
 }
 
-
 menu ul li a {
     color: #fff;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-o9t;
 
     &:after {
         background: $primary;

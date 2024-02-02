@@ -3,6 +3,14 @@
     margin: 70px auto 80px;
     padding: 120px 0 140px;
     position: relative;
+            
+    @include MQ($S) {
+        padding: 120px 0 110px;
+    }
+
+    @include MQ($XS) {
+        padding: 150px 0 110px;
+    }
     
     &::after {
         background: url(../images/sections/somos/somos-border.svg);
@@ -22,7 +30,19 @@
     
     &__container {
         margin: 0 auto;
-        max-width: 930px;
+        
+        @include MQ($L) {
+            max-width: 75vw;
+        }
+            
+        @include MQ($S) {
+            margin: 0 40px;
+            max-width: 100%;
+        }
+
+        @include MQ($XS) {
+            margin: 0 20px;
+        }
         
         &::before, &::after {
             background: url(../images/sections/projs/projs-effect.svg);
@@ -32,17 +52,60 @@
             height: 415px;
             position: absolute;
             width: 330px;
+            
+            @include MQ($L) {
+                background-size: contain;
+                height: 350px;
+                width: 250px;
+            }
+            
+            @include MQ($S) {
+                height: 300px;
+                width: 200px;
+            }
+
+            @include MQ($XS) {
+                background-size: cover;
+                height: 32px;
+            }
         }
         
         &::before {
             bottom: -90px;
             left: -120px;
             transform: rotate(180deg);
+        
+            @include MQ($L) {
+                bottom: -50px;
+                left: -90px;
+            }
+            
+            @include MQ($S) {
+                bottom: -30px;
+                left: -20px;
+            }
+
+            @include MQ($XS) {
+                left: 5px;
+            }
         }
         
         &::after {
             right: -120px;
             top: -40px;
+        
+            @include MQ($L) {
+                right: -90px;
+            }
+            
+            @include MQ($S) {
+                right: -20px;
+            }
+
+            @include MQ($XS) {
+                top: -70px;
+                right: 5px;
+            }
         }
         
         h3 {
@@ -63,11 +126,18 @@
             }
         }
         
-        p b {
-            color: #fff;
-            font-family: $font;
-            font-weight: 500;
-            text-transform: uppercase;
+        p {
+            @include MQ($S) {
+                line-height: 1.6em;
+                max-width: 390px;
+            }
+            
+            b {
+                color: #fff;
+                font-family: $font;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
         }
     }
     
@@ -75,16 +145,43 @@
         align-items: center;
         margin: 0 -1%;
         
+        @include MQ($M) {
+            flex-direction: column;
+            margin: 20px 0;
+        }
+        
         &-item {
             cursor: pointer;
             margin: 6% 1% -3%;
             text-align: center;
             width: 30%;
             z-index: 2;
+        
+            @include MQ($M) {
+                margin: 40px auto 0 0;
+                width: 50%;
+            }
+            
+            @include MQ($S) {
+                margin: 30px auto;
+                width: 320px;
+            }
+
+            @include MQ($XS) {
+                width: 330px;
+            }
             
             &:nth-child(2) {
                 margin: 30px auto 20px;
-            }            
+        
+                @include MQ($M) {
+                    margin: -60px 0 -100px auto;
+                }
+            
+                @include MQ($S) {
+                    margin: -50px auto;
+                }
+            }
             
             h3 {
                 color: #fff;
@@ -94,6 +191,10 @@
                 padding: 0;
                 text-transform: uppercase;
                 transition: color .5s ease-in-out;
+        
+                @include MQ($L) {
+                    font-size: 16px;
+                }
                 
                 &::before {
                     display: none;
@@ -115,6 +216,18 @@
     &__img {
         height: 180px;
         margin-bottom: 20px;
+        
+        @include MQ($L) {
+            height: 150px;
+        }
+        
+        @include MQ($M) {
+            height: 190px;
+        }
+
+        @include MQ($XS) {
+            height: 200px;
+        }
         
         img {
             height: 100%;
