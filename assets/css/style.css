@@ -987,13 +987,13 @@ menu ul li a {
 
 footer {
   background: #263640;
-  padding: 40px 0 30px; }
+  padding: 70px 0 30px; }
   @media screen and (max-width: 1170px) {
     footer {
-      padding: 40px 40px 30px; } }
+      padding: 70px 40px 30px; } }
   @media screen and (max-width: 960px) {
     footer {
-      padding: 40px 20px 30px; } }
+      padding: 70px 20px 30px; } }
   @media screen and (max-width: 758px) {
     footer {
       padding: 60px 20px 40px; } }
@@ -1849,34 +1849,6 @@ footer {
     @media screen and (max-width: 500px) {
       .ctt__container {
         margin: 0 20px; } }
-    .ctt__container::before, .ctt__container::after {
-      background: url(../images/global/contact-effect.svg);
-      background-repeat: no-repeat;
-      content: '';
-      height: 50px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%) rotate(90deg);
-      width: 190px;
-      z-index: 5; }
-      @media screen and (max-width: 758px) {
-        .ctt__container::before, .ctt__container::after {
-          display: none; } }
-    .ctt__container::before {
-      left: -20%;
-      margin-top: -40px; }
-      @media screen and (max-width: 1170px) {
-        .ctt__container::before {
-          left: -25%; } }
-      @media screen and (max-width: 960px) {
-        .ctt__container::before {
-          left: -27%; } }
-    .ctt__container::after {
-      left: 100%;
-      margin-top: 40px; }
-      @media screen and (max-width: 960px) {
-        .ctt__container::after {
-          left: 95%; } }
     .ctt__container h3 {
       margin: -10px 0 40px;
       padding-left: 20px;
@@ -1906,8 +1878,107 @@ footer {
     line-height: 1.6em;
     margin: 30px 0 40px;
     text-transform: uppercase; }
+    @media screen and (max-width: 500px) {
+      .ctt__content p {
+        margin: 30px 0; } }
+  .ctt__list {
+    align-items: center;
+    justify-content: space-around;
+    position: relative; }
+    @media screen and (max-width: 758px) {
+      .ctt__list {
+        justify-content: space-between; } }
+    @media screen and (max-width: 500px) {
+      .ctt__list {
+        flex-direction: column; } }
+    .ctt__list::before, .ctt__list::after {
+      background: url(../images/global/contact-effect.svg);
+      background-repeat: no-repeat;
+      content: '';
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      width: 190px;
+      z-index: 5; }
+      @media screen and (max-width: 758px) {
+        .ctt__list::before, .ctt__list::after {
+          display: none; } }
+    .ctt__list::before {
+      left: -20%; }
+      @media screen and (max-width: 1170px) {
+        .ctt__list::before {
+          left: -25%; } }
+      @media screen and (max-width: 960px) {
+        .ctt__list::before {
+          left: -27%; } }
+    .ctt__list::after {
+      left: 100%; }
+      @media screen and (max-width: 960px) {
+        .ctt__list::after {
+          left: 95%; } }
+    .ctt__list-item {
+      margin-bottom: 30px;
+      text-align: center; }
+      @media screen and (max-width: 500px) {
+        .ctt__list-item {
+          margin: 10px 0 30px; } }
+      .ctt__list-item h4 {
+        margin: 20px 0 10px;
+        text-transform: uppercase; }
+        @media screen and (max-width: 960px) {
+          .ctt__list-item h4 {
+            font-size: 18px; } }
+        @media screen and (max-width: 758px) {
+          .ctt__list-item h4 {
+            font-size: 16px; } }
+      .ctt__list-item p {
+        font-size: 20px;
+        margin: 0; }
+        @media screen and (max-width: 960px) {
+          .ctt__list-item p {
+            font-size: 16px; } }
+        @media screen and (max-width: 758px) {
+          .ctt__list-item p {
+            font-size: 18px; } }
+    .ctt__list-img {
+      align-items: center;
+      height: 267px;
+      margin: auto;
+      position: relative;
+      width: 267px; }
+      @media screen and (max-width: 960px) {
+        .ctt__list-img {
+          height: 200px;
+          width: 200px; } }
+      .ctt__list-img::before {
+        background: url(../images/global/logo.svg);
+        background-size: contain;
+        content: '';
+        height: 100%;
+        left: 50%;
+        margin: 1px 0 0 1px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        width: 100%;
+        z-index: 0; }
+      .ctt__list-img img {
+        border: 2px solid #000;
+        border-radius: 100%;
+        height: 170px;
+        object-fit: contain;
+        width: 170px;
+        z-index: 1; }
+        @media screen and (max-width: 960px) {
+          .ctt__list-img img {
+            height: 130px;
+            width: 130px; } }
   .ctt__btn {
     margin: 40px 0 -20px; }
+    @media screen and (max-width: 758px) {
+      .ctt__btn {
+        margin: 20px 0 -20px; } }
     @media screen and (max-width: 758px) {
       .ctt__btn .btn {
         font-size: 16px; } }

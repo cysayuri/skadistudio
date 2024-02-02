@@ -1,14 +1,14 @@
 //Footer code
 footer {
     background: $secondary;
-    padding: 40px 0 30px;
+    padding: 70px 0 30px;
         
     @include MQ($L) {
-        padding: 40px 40px 30px;
+        padding: 70px 40px 30px;
     }
         
     @include MQ($M) {
-        padding: 40px 20px 30px;
+        padding: 70px 20px 30px;
     }
         
     @include MQ($S) {
