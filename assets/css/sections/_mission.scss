@@ -1,5 +1,6 @@
 .mission {
     background: url(../images/sections/missao/missao.jpg);
+    background-size: cover;
     margin: 70px auto;
     padding: 150px 0;
     
@@ -13,6 +14,7 @@
         &::before, &::after {
             background: url(../images/sections/somos/somos-effect.svg);
             background-repeat: no-repeat;
+            background-size: cover;
             // content: '';
             height: 550px;
             position: absolute;

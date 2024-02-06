@@ -1275,6 +1275,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  max-height: 700px;
   width: 100vw; }
   @media screen and (max-width: 1380px) {
     .banner {
@@ -1324,6 +1325,7 @@ footer {
   .about::before, .about::after {
     background: url(../images/sections/somos/somos-border.svg);
     background-repeat: no-repeat;
+    background-size: cover;
     content: '';
     height: 110px;
     left: 0;
@@ -1432,6 +1434,7 @@ footer {
 
 .mission {
   background: url(../images/sections/missao/missao.jpg);
+  background-size: cover;
   margin: 70px auto;
   padding: 150px 0; }
   .mission__container {
@@ -1442,6 +1445,7 @@ footer {
     .mission__container::before, .mission__container::after {
       background: url(../images/sections/somos/somos-effect.svg);
       background-repeat: no-repeat;
+      background-size: cover;
       height: 550px;
       position: absolute;
       top: -90px;
@@ -1505,6 +1509,7 @@ footer {
   .services::before, .services::after {
     background: url(../images/sections/somos/somos-border.svg);
     background-repeat: no-repeat;
+    background-size: cover;
     content: '';
     height: 110px;
     left: 0;
@@ -1652,6 +1657,7 @@ footer {
 
 .projs {
   background: url(../images/sections/missao/missao.jpg);
+  background-size: cover;
   margin: 70px auto 80px;
   padding: 120px 0 140px;
   position: relative; }
@@ -1664,15 +1670,15 @@ footer {
   .projs::after {
     background: url(../images/sections/somos/somos-border.svg);
     background-repeat: no-repeat;
+    background-size: cover;
+    bottom: -70px;
     content: '';
     height: 110px;
     left: 0;
     position: absolute;
+    transform: scaleX(-1);
     width: 100vw;
     z-index: 1; }
-  .projs::after {
-    bottom: -70px;
-    transform: scaleX(-1); }
   .projs__container {
     margin: 0 auto; }
     @media screen and (max-width: 1170px) {
@@ -1707,7 +1713,7 @@ footer {
           background-size: cover;
           height: 32px; } }
     .projs__container::before {
-      bottom: -90px;
+      bottom: -60px;
       left: -120px;
       transform: rotate(180deg); }
       @media screen and (max-width: 1170px) {
@@ -1766,13 +1772,13 @@ footer {
         margin: 20px 0; } }
     .projs__list-item {
       cursor: pointer;
-      margin: 6% 1% -3%;
+      margin: 5% 1% 0;
       text-align: center;
       width: 30%;
       z-index: 2; }
       @media screen and (max-width: 960px) {
         .projs__list-item {
-          margin: 40px auto 0 0;
+          margin: 40px auto 0;
           width: 50%; } }
       @media screen and (max-width: 758px) {
         .projs__list-item {
@@ -1781,14 +1787,12 @@ footer {
       @media screen and (max-width: 500px) {
         .projs__list-item {
           width: 330px; } }
-      .projs__list-item:nth-child(2) {
-        margin: 30px auto 20px; }
-        @media screen and (max-width: 960px) {
-          .projs__list-item:nth-child(2) {
-            margin: -60px 0 -100px auto; } }
-        @media screen and (max-width: 758px) {
-          .projs__list-item:nth-child(2) {
-            margin: -50px auto; } }
+      @media screen and (max-width: 960px) {
+        .projs__list-item:nth-child(2) {
+          margin: -10px auto -50px; } }
+      @media screen and (max-width: 758px) {
+        .projs__list-item:nth-child(2) {
+          margin: -50px auto; } }
       .projs__list-item h3 {
         color: #fff;
         font-size: 18px;
@@ -1819,6 +1823,7 @@ footer {
       .projs__img {
         height: 200px; } }
     .projs__img img {
+      border-radius: 20px;
       height: 100%;
       object-fit: cover;
       transition: opacity .5s ease-in-out;
@@ -1831,15 +1836,15 @@ footer {
   .ctt::after {
     background: url(../images/sections/somos/somos-border.svg);
     background-repeat: no-repeat;
+    background-size: cover;
+    bottom: -110px;
     content: '';
     height: 110px;
     left: 0;
     position: absolute;
+    transform: rotate(180deg) scaleX(-1);
     width: 100vw;
     z-index: 1; }
-  .ctt::after {
-    bottom: -110px;
-    transform: rotate(180deg) scaleX(-1); }
   .ctt__container {
     margin: 0 auto;
     position: relative; }

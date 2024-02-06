@@ -6,6 +6,7 @@
     &::before, &::after {
         background: url(../images/sections/somos/somos-border.svg);
         background-repeat: no-repeat;
+        background-size: cover;
         content: '';
         height: 110px;
         left: 0;
